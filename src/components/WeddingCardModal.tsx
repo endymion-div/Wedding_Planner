@@ -164,7 +164,7 @@ export const WeddingCardModal: React.FC<WeddingCardModalProps> = ({
                 {/* Wax Seal Crest */}
                 <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full overflow-hidden shadow-md border-2 border-amber-300 mb-4 bg-rose-900">
                   <img
-                    src="/src/assets/images/vintage_wax_seal_crest_1794235743246.jpg"
+                    src="/images/vintage_wax_seal_crest_1794235743246.jpg"
                     alt="Official E&J Wax Seal Crest"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"

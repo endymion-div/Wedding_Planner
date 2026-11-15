@@ -22,6 +22,7 @@ import { calculateRsvpStats, filterGuests } from '../utils/rsvp';
 import { WeatherWidget } from './WeatherWidget';
 import { GuestSeatingPlan } from './GuestSeatingPlan';
 import { DietaryPieChart } from './DietaryPieChart';
+import { VenueGoogleMap } from './VenueGoogleMap';
 import { convertTimeCET, SupportedTimezone } from '../utils/globalization';
 
 interface LogisticsAndRsvpProps {
@@ -590,7 +591,7 @@ export const LogisticsAndRsvp: React.FC<LogisticsAndRsvpProps> = ({
           <div className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-xs">
             <div className="relative aspect-16/9 sm:aspect-21/9 bg-stone-100">
               <img
-                src="/src/assets/images/venue_villa_estate_1794230269596.jpg"
+                src="/images/venue_villa_estate_1794230269596.jpg"
                 alt="Villa La Selva Estate"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -666,7 +667,7 @@ export const LogisticsAndRsvp: React.FC<LogisticsAndRsvpProps> = ({
                 <div className="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 shadow-xs space-y-2">
                   <div className="relative aspect-16/10">
                     <img
-                      src="/src/assets/images/wedding_tablescape_candlelight_1794235742765.jpg"
+                      src="/images/wedding_tablescape_candlelight_1794235742765.jpg"
                       alt="Candlelit Banquet Tablescape"
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
@@ -706,15 +707,8 @@ export const LogisticsAndRsvp: React.FC<LogisticsAndRsvpProps> = ({
                     </a>
                   </div>
 
-                  {/* Simulated interactive map container with live Google Maps embed */}
-                  <div className="relative rounded-2xl overflow-hidden border border-stone-200 aspect-16/10 bg-stone-100">
-                    <iframe
-                      title="Villa La Selva Google Map"
-                      src={weddingDetails.venue.mapEmbedUrl}
-                      className="w-full h-full border-0"
-                      loading="lazy"
-                    />
-                  </div>
+                  {/* Official Google Maps Platform Interactive Map */}
+                  <VenueGoogleMap />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">

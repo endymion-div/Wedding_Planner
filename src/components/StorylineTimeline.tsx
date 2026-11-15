@@ -39,7 +39,7 @@ export const StorylineTimeline: React.FC<StorylineTimelineProps> = ({
       location: newLocation || 'Tuscany, Italy',
       description: newDescription,
       quote: newQuote ? `"${newQuote}"` : undefined,
-      imageUrl: '/src/assets/images/hero_wedding_couple_1794230266576.jpg',
+      imageUrl: '/images/hero_wedding_couple_1794230266576.jpg',
       category: 'Adventure',
     };
 

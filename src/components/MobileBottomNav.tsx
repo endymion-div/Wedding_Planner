@@ -6,7 +6,8 @@ import {
   DollarSign, 
   Bot, 
   Palmtree,
-  Users
+  Users,
+  Sparkles
 } from 'lucide-react';
 import { UserRole } from '../types/wedding';
 
@@ -27,8 +28,9 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
     { id: 'logistics', label: 'RSVP', icon: CalendarCheck },
     { id: 'seating', label: 'Seating', icon: Users },
     ...(userRole === 'Couple' ? [{ id: 'budget', label: 'Budget', icon: DollarSign }] : []),
-    { id: 'assistant', label: 'AI Concierge', icon: Bot },
-    { id: 'honeymoon', label: 'Honeymoon', icon: Palmtree },
+    { id: 'assistant', label: 'AI', icon: Bot },
+    { id: 'studio', label: 'Studio', icon: Sparkles },
+    { id: 'honeymoon', label: 'Trip', icon: Palmtree },
   ];
 
   return (

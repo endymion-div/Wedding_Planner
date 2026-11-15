@@ -14,7 +14,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
   currentRole,
   onSwitchRole,
   weddingDateStr,
-  waxSealUrl = '/src/assets/images/vintage_wax_seal_crest_1794235743246.jpg',
+  waxSealUrl = '/images/vintage_wax_seal_crest_1794235743246.jpg',
   onOpenRomanticSettings,
 }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -49,7 +49,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
       {/* Background Hero Image */}
       <div className="relative min-h-[460px] sm:min-h-[400px] md:h-[440px] w-full flex flex-col justify-between p-4 sm:p-6">
         <img
-          src="/src/assets/images/hero_wedding_couple_1794230266576.jpg"
+          src="/images/hero_wedding_couple_1794230266576.jpg"
           alt="Elena & Julian Tuscan Wedding"
           className="absolute inset-0 w-full h-full object-cover object-center"
           referrerPolicy="no-referrer"

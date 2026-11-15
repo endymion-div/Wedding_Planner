@@ -378,7 +378,7 @@ export const RomanticSettingsModal: React.FC<RomanticSettingsModalProps> = ({
                   >
                     <div className="w-10 h-10 mx-auto rounded-full overflow-hidden shadow-xs border border-rose-200">
                       <img
-                        src="/src/assets/images/vintage_wax_seal_crest_1794235743246.jpg"
+                        src="/images/vintage_wax_seal_crest_1794235743246.jpg"
                         alt="Crimson Wax Seal"
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
@@ -441,7 +441,7 @@ export const RomanticSettingsModal: React.FC<RomanticSettingsModalProps> = ({
 
                   <div className="w-9 h-9 rounded-full overflow-hidden shadow-sm border border-amber-200">
                     <img
-                      src="/src/assets/images/vintage_wax_seal_crest_1794235743246.jpg"
+                      src="/images/vintage_wax_seal_crest_1794235743246.jpg"
                       alt="Wax seal stamp"
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"

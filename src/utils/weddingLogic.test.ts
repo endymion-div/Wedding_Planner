@@ -4,6 +4,11 @@ import { calculateBudgetMetrics, getUpcomingDues } from './budget';
 import { calculateRsvpStats, filterGuests } from './rsvp';
 import { matchHoneymoonDestinations } from './honeymoon';
 import { convertFromUSD, formatGlobalCurrency, convertTimeCET } from './globalization';
+import {
+  buildCaptionFromFilename,
+  prepareBatchPhotoPayloads,
+  extractGroundingLinks,
+} from './imageUpload';
 import { Expense, Guest, HoneymoonDestination } from '../types/wedding';
 
 test('calculateBudgetMetrics correctly calculates totals, remaining balance, and categories', () => {
@@ -201,7 +206,7 @@ test('matchHoneymoonDestinations scores destinations based on budget and vibes',
       costBreakdown: { flights: 2000, luxuryStayPerNight: 800, nights: 10, activitiesAndDining: 2000 },
       bestSeason: 'May - October',
       romanticHighlights: ['Private sunset boat tour around Capri', 'Candlelit dining on cliff terrace'],
-      imageUrl: '/src/assets/images/honeymoon_amalfi_vista.jpg',
+      imageUrl: '/images/honeymoon_amalfi_vista.jpg',
       rating: 4.9,
     },
     {
@@ -214,7 +219,7 @@ test('matchHoneymoonDestinations scores destinations based on budget and vibes',
       costBreakdown: { flights: 2500, luxuryStayPerNight: 1000, nights: 8, activitiesAndDining: 4500 },
       bestSeason: 'December - March & July - September',
       romanticHighlights: ['Private outdoor hot tub overlooking Matterhorn'],
-      imageUrl: '/src/assets/images/venue_villa_estate.jpg',
+      imageUrl: '/images/venue_villa_estate.jpg',
       rating: 4.8,
     },
   ];
@@ -330,4 +335,69 @@ test('calculateTableStats and reassignGuestTable correctly calculate seating cap
   const searchPlusOne = filterSeatingGuests(testGuests, 'all', 'Marco');
   assert.equal(searchPlusOne.length, 1);
 });
+
+test('imageUpload helpers normalize filenames, prepare batch payloads, and deduplicate grounding links', () => {
+  assert.equal(buildCaptionFromFilename('tuscany_sunset_toast-01.jpg'), 'Tuscany sunset toast 01');
+  assert.equal(buildCaptionFromFilename('IMG_4921.png'), 'Captured wedding celebration moment');
+  assert.equal(buildCaptionFromFilename('123456.webp'), 'Captured wedding celebration moment');
+
+  const batch = prepareBatchPhotoPayloads(
+    [
+      {
+        localId: '1',
+        fileName: 'villa_arrival.jpg',
+        dataUrl: 'data:image/jpeg;base64,abc123',
+        caption: '  ',
+        tag: 'Decor',
+        sizeBytes: 1200,
+      },
+      {
+        localId: '2',
+        fileName: 'hero.png',
+        dataUrl: '/images/hero_couple.jpg',
+        caption: 'Custom guest caption',
+        tag: '',
+        sizeBytes: 2400,
+      },
+      {
+        localId: '3',
+        fileName: 'invalid.txt',
+        dataUrl: '',
+        caption: 'Should be filtered out',
+        tag: 'Candid',
+        sizeBytes: 10,
+      },
+    ],
+    'Marco Rossi',
+    'Guest',
+    'Candid'
+  );
+
+  assert.equal(batch.length, 2);
+  assert.equal(batch[0].caption, 'Villa arrival');
+  assert.equal(batch[0].uploaderName, 'Marco Rossi');
+  assert.equal(batch[0].uploaderRole, 'Guest');
+  assert.deepEqual(batch[0].tags, ['Decor']);
+  assert.equal(batch[1].caption, 'Custom guest caption');
+  assert.deepEqual(batch[1].tags, ['Candid']);
+
+  const links = extractGroundingLinks([
+    { web: { uri: 'https://example.com/villa', title: 'Villa Guide' } },
+    { web: { uri: 'https://example.com/villa', title: 'Duplicate Guide' } },
+    {
+      maps: {
+        uri: 'https://maps.google.com/?cid=123',
+        title: 'Villa La Selva',
+        placeAnswerSources: { reviewSnippets: [{ content: 'Gorgeous olive groves' }] },
+      },
+    },
+  ]);
+
+  assert.equal(links.length, 2);
+  assert.equal(links[0].type, 'web');
+  assert.equal(links[0].title, 'Villa Guide');
+  assert.equal(links[1].type, 'maps');
+  assert.equal(links[1].snippet, 'Gorgeous olive groves');
+});
+
 
