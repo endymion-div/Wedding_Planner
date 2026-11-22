@@ -1,50 +1,95 @@
 # 💍 Wedding Planner
 
-A modern, interactive **Wedding Planner web application** designed to make wedding planning simpler, more organized, and more enjoyable.
+> **Plan. Organize. Celebrate.**  
+> A modern, interactive AI-powered wedding planning platform designed to bring every important part of wedding preparation together in one elegant digital experience.
 
-The application provides a centralized platform where users can explore and manage different aspects of a wedding, helping bring planning tasks, ideas, and arrangements together in one place.
+## 🌸 Overview
+
+**Wedding Planner** is a modern web application that simplifies the wedding-planning process by bringing planning tasks, ideas, arrangements, and assistance into a centralized platform.
+
+Instead of managing different aspects of a wedding across multiple applications, users can interact with a single, visually engaging platform to organize their planning journey.
+
+The application combines a **React-based interface**, responsive design, smooth animations, and **Google Gemini-powered AI capabilities** to create an interactive and personalized planning experience.
 
 ---
 
 ## ✨ Features
 
-- 💒 Modern wedding-planning interface
-- 📋 Organized wedding planning experience
-- 🎨 Clean and responsive user interface
-- 📱 Responsive design for different screen sizes
-- 🧭 Easy navigation between application sections
-- ✨ Smooth animations and interactive UI elements
-- 🤖 AI-powered capabilities using Google Gemini
-- 🔔 Interactive icons and controls
-- 🌐 Vite-powered development environment
-- ⚡ Fast and optimized React application
+### 💒 Wedding Planning
+
+- Centralized wedding-planning experience
+- Organized planning sections
+- Interactive planning interface
+- Easy navigation between different wedding-related areas
+
+### 🤖 AI-Powered Assistance
+
+Powered by **Google Gemini**, the application can be extended to provide intelligent assistance such as:
+
+- 💡 Personalized wedding-planning suggestions
+- 🗓️ Planning and scheduling assistance
+- 💰 Budget-planning ideas
+- 💐 Decoration and theme suggestions
+- 🍽️ Menu recommendations
+- 📋 Personalized wedding checklists
+- 💬 AI-powered planning assistance
+
+### 🎨 Modern UI/UX
+
+- Elegant wedding-inspired interface
+- Clean and intuitive layout
+- Smooth animations and transitions
+- Interactive controls and icons
+- Responsive components
+- User-friendly navigation
+
+### 📱 Responsive Design
+
+The application is designed to adapt to different screen sizes, including:
+
+- 💻 Desktop
+- 🖥️ Laptop
+- 📱 Mobile
+- 📲 Tablet
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
-- **React 19**
-- **TypeScript**
-- **HTML5**
-- **Tailwind CSS**
-- **Vite**
+## Frontend
 
-### UI & Animation
-- **Lucide React** — icons
-- **Motion** — animations and transitions
+| Technology | Purpose |
+|---|---|
+| **React 19** | UI development |
+| **TypeScript** | Type-safe application logic |
+| **HTML5** | Application structure |
+| **Tailwind CSS** | Styling and responsive design |
+| **Vite** | Development and build tooling |
 
-### Backend
-- **Express.js**
-- **Node.js**
-- **tsx**
+## UI & Animation
 
-### AI Integration
-- **Google GenAI / Gemini API**
+| Technology | Purpose |
+|---|---|
+| **Lucide React** | Icons |
+| **Motion** | Animations and transitions |
+
+## Backend
+
+| Technology | Purpose |
+|---|---|
+| **Node.js** | Runtime environment |
+| **Express.js** | Server-side functionality |
+| **tsx** | TypeScript execution |
+
+## AI
+
+| Technology | Purpose |
+|---|---|
+| **Google GenAI / Gemini API** | AI-powered wedding assistance |
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```text
 Wedding_Planner/
@@ -68,71 +113,82 @@ Wedding_Planner/
 └── README.md
 ```
 
-> The exact contents of the `src` directory may evolve as new features are added.
+> The `src` directory may evolve as additional components and features are introduced.
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### 1. Clone the repository
+## Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js**
+- **npm**
+- A modern web browser
+- A Gemini API key if AI functionality requires it
+
+---
+
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/snehaghosh0015/Wedding_Planner.git
 ```
 
-### 2. Navigate to the project
+## 2️⃣ Navigate to the Project
 
 ```bash
 cd Wedding_Planner
 ```
 
-### 3. Install dependencies
+## 3️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Configure environment variables
+## 4️⃣ Configure Environment Variables
 
-Create a `.env` file using the provided example:
+Create a `.env` file from the provided example:
 
 ```bash
 cp .env.example .env
 ```
 
-Add the required API configuration to the `.env` file.
-
-For example:
+Add the required Gemini API configuration:
 
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
 
-**Never commit your actual API key to GitHub.**
+> 🔐 **Important:** Never upload your actual API key to GitHub. Keep credentials inside environment variables and ensure `.env` is included in `.gitignore`.
 
 ---
 
-## ▶️ Run the Application
+# ▶️ Running the Application
 
-Start the development server using:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-The application will start in development mode and can be opened through the local URL displayed in your terminal.
+Vite will provide a local development URL in the terminal.
+
+Open that URL in your browser to launch the application.
 
 ---
 
-## 🏗️ Build for Production
+# 🏗️ Production Build
 
-To create a production build:
+Create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-To preview the production build:
+Preview the production build locally:
 
 ```bash
 npm run preview
@@ -140,9 +196,9 @@ npm run preview
 
 ---
 
-## 🧹 Clean Build Files
+# 🧹 Clean Build
 
-The project also includes a clean script:
+Remove generated build files using:
 
 ```bash
 npm run clean
@@ -150,70 +206,141 @@ npm run clean
 
 ---
 
-## 🔍 Type Checking
+# 🔍 Type Checking
 
-Run TypeScript checking with:
+Run the project's TypeScript checking command:
 
 ```bash
 npm run lint
 ```
 
-This checks the project for TypeScript errors without generating build files.
+This helps identify TypeScript-related issues during development.
 
 ---
 
-## 🤖 AI Integration
+# 🤖 AI Integration
 
-The project includes integration with the **Google GenAI SDK**, allowing AI-powered functionality to be incorporated into the wedding-planning experience.
+Wedding Planner integrates the **Google GenAI SDK / Gemini API** to support AI-powered functionality.
 
-The application can be extended with AI features such as:
+The AI layer can be used to transform the application from a simple planning interface into an intelligent wedding-planning assistant.
 
-- 💡 Wedding planning suggestions
-- 🗓️ Personalized planning assistance
-- 💰 Budget-planning ideas
-- 💐 Theme and decoration suggestions
-- 🍽️ Menu recommendations
-- 📋 Personalized wedding checklists
-- 💬 AI-based wedding assistance
+Potential AI interactions include:
 
-The API key should be stored securely in environment variables rather than directly inside the source code.
+```text
+User → Wedding Planning Request
+             ↓
+       Gemini AI Processing
+             ↓
+   Personalized Recommendation
+             ↓
+        User Interface
+```
 
----
+### Example AI Use Cases
 
-## 🎨 Design Philosophy
+- Generate a personalized wedding checklist
+- Suggest wedding themes
+- Recommend decoration ideas
+- Generate menu suggestions
+- Help organize wedding timelines
+- Provide budget-planning ideas
+- Assist with wedding preparation decisions
 
-Wedding Planner focuses on creating an experience that is:
-
-**Simple** — Easy for users to understand and navigate.
-
-**Elegant** — A wedding-focused visual style with a clean interface.
-
-**Interactive** — Smooth animations and responsive UI elements make the application engaging.
-
-**Practical** — Planning-related functionality is organized into a centralized application.
-
-**Responsive** — Designed to work across desktop and smaller screen sizes.
+The Gemini API key should always be stored securely using environment variables.
 
 ---
 
-## 📱 Responsive Design
+# 🎨 Design Philosophy
 
-The application is designed with responsive web development principles so that the interface can adapt to different devices and screen sizes.
+Wedding Planner is built around five principles:
 
-It can be used on:
+### ✨ Elegant
 
-- 💻 Desktop computers
-- 🖥️ Laptops
-- 📱 Mobile devices
-- 📲 Tablets
+A clean, wedding-focused visual experience designed to feel polished and modern.
+
+### 🧭 Simple
+
+Planning features are organized to make navigation intuitive and easy to understand.
+
+### ⚡ Interactive
+
+Animations, dynamic elements, and responsive controls create an engaging experience.
+
+### 📋 Practical
+
+The application focuses on bringing multiple planning activities into one centralized platform.
+
+### 📱 Responsive
+
+The interface is designed to remain usable across different screen sizes and devices.
 
 ---
 
-## 📦 Available NPM Scripts
+# 🔮 Future Enhancements
+
+Wedding Planner can be expanded into a complete wedding-management platform with features such as:
+
+- 📅 Wedding timeline and calendar
+- 👥 Guest management
+- 💌 Digital invitation management
+- 💰 Budget tracker
+- 💐 Vendor management
+- 🏨 Venue management
+- 🍽️ Catering management
+- 📸 Photography planning
+- 🎵 Music and entertainment planning
+- 📝 Smart wedding checklist
+- 🤖 Advanced Gemini AI assistant
+- 👤 User accounts and authentication
+- ☁️ Cloud data storage
+- 📊 Wedding-planning progress dashboard
+- 🔔 Reminders and notifications
+- 📈 Budget and planning analytics
+
+---
+
+# 🎯 Project Goals
+
+The primary goal of **Wedding Planner** is to create a centralized digital solution for organizing wedding preparations.
+
+The application aims to reduce the complexity of wedding planning by combining:
+
+**Planning + Organization + AI Assistance + Interactive Design**
+
+into a single platform.
+
+---
+
+# 🌐 Live Demo
+
+🚀 **Try the Wedding Planner:**  
+https://ais-pre-6th2sknuoxfqqnimadgjf2-830168134515.asia-east1.run.app/
+
+---
+
+# 📸 Screenshots
+
+Add screenshots of the application here to give visitors an immediate visual overview.
+
+Example:
+
+```markdown
+## 📸 Screenshots
+
+![Wedding Planner Dashboard](screenshots/dashboard.png)
+
+![Wedding Planner Interface](screenshots/planner.png)
+
+![AI Wedding Assistant](screenshots/ai-assistant.png)
+```
+
+---
+
+# 📦 NPM Scripts
 
 | Command | Description |
 |---|---|
-| `npm run dev` | Starts the development server |
+| `npm run dev` | Starts the Vite development server |
 | `npm run start` | Starts the application |
 | `npm run build` | Creates the production build |
 | `npm run preview` | Previews the production build |
@@ -222,17 +349,15 @@ It can be used on:
 
 ---
 
-## 🔐 Environment Variables
+# 🔐 Environment Variables
 
-If the application requires API credentials, create a `.env` file locally.
+The project may require environment variables for AI functionality.
 
-Example:
+Create a local `.env` file:
 
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
-
-Keep your `.env` file private and make sure it is excluded from version control.
 
 The repository includes:
 
@@ -240,62 +365,59 @@ The repository includes:
 .env.example
 ```
 
-which can be used as a template for environment configuration.
+as a template.
+
+### Security
+
+Never commit:
+
+```text
+.env
+```
+
+or any file containing private API credentials.
 
 ---
 
-## 🌱 Future Enhancements
+# 👩‍💻 Author
 
-The Wedding Planner can be further expanded with features such as:
+### Sneha Ghosh
 
-- 📅 Complete wedding timeline and calendar
-- 👥 Guest management
-- 💌 Digital invitation management
-- 💰 Wedding budget tracker
-- 💐 Vendor management
-- 🏨 Venue management
-- 🍽️ Catering management
-- 📸 Wedding photography planning
-- 🎵 Music and entertainment planning
-- 📝 Personalized wedding checklist
-- 🤖 More advanced AI wedding assistance
-- ☁️ Cloud-based user accounts and data storage
-- 📊 Planning progress dashboard
+**B.Tech CSE (AI & ML)**
+
+Interested in:
+
+- 🤖 Artificial Intelligence
+- 💻 Software Development
+- 🌐 Web Development
+- 🚀 Hackathons
+- 🧠 Emerging Technologies
+
+GitHub: **[@snehaghosh0015](https://github.com/snehaghosh0015)**
 
 ---
 
-## 🎯 Project Goals
-
-The main goal of Wedding Planner is to provide a centralized digital solution for organizing wedding-related planning activities.
-
-Instead of managing different planning tasks across multiple platforms, users can use one application to organize their ideas and preparations in a more structured way.
-
----
-
-## 👩‍💻 Author
-
-**Sneha Ghosh**
-
-GitHub: [@snehaghosh0015](https://github.com/snehaghosh0015)
-
----
-
-## 📄 License
+# 📄 License
 
 This project is available for educational and development purposes.
 
-If you plan to reuse or distribute the project, please check the repository's licensing requirements and add an appropriate license file.
+If you plan to reuse, modify, or distribute the project, add an appropriate open-source license to the repository.
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
+If you like this project, consider giving the repository a ⭐ on GitHub.
 
-Contributions, suggestions, and improvements are welcome!
+Suggestions, improvements, and contributions are welcome.
 
 ---
+
+<div align="center">
 
 ### 💍 Plan. Organize. Celebrate.
 
-**Wedding Planner** — bringing wedding planning into one beautiful digital experience.
+**Wedding Planner**  
+*Bringing wedding planning into one beautiful digital experience.*
+
+</div>
